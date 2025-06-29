@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Error | Something went wrong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+
+        body {
+          font-family: 'Inter', sans-serif;
+          background: #f8f9fa;
+          color: #212529;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          padding: 20px;
+        }
+
+        .error-container {
+          text-align: center;
+          max-width: 600px;
+          background: #fff;
+          padding: 40px;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .error-code {
+          font-size: 6rem;
+          font-weight: 700;
+          color: #4361ee;
+        }
+
+        .error-message {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin: 10px 0;
+        }
+
+        .error-description {
+          font-size: 1rem;
+          color: #6c757d;
+          margin-bottom: 30px;
+        }
+
+        .buttons {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+
+        .btn {
+          padding: 12px 24px;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          text-decoration: none;
+          color: white;
+          transition: 0.3s ease;
+          cursor: pointer;
+        }
+
+        .btn-home {
+          background-color: #4361ee;
+        }
+
+        .btn-home:hover {
+          background-color: #3f37c9;
+        }
+
+        .btn-contact {
+          background-color: #f72585;
+        }
+
+        .btn-contact:hover {
+          background-color: #c9184a;
+        }
+
+        @media (max-width: 480px) {
+          .error-code {
+            font-size: 4rem;
+          }
+
+          .error-message {
+            font-size: 1.2rem;
+          }
+
+          .error-description {
+            font-size: 0.95rem;
+          }
+        }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <div class="error-code">{{error_code}}</div>
+    <div class="error-message">{{error_msg}}</div>
+    <div class="error-description">
+        We're sorry, but an unexpected error occurred. <br/>
+        Please try again or contact support.
+    </div>
+    <div class="buttons">
+        <a href="register" class="btn btn-home">Go back</a>
+        <a href="mailto:support@example.com" class="btn btn-contact">Contact Support</a>
+    </div>
+</div>
+</body>
+</html>

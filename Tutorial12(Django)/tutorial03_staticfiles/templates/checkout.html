@@ -1,0 +1,263 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - EcoTrend</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/checkout.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="header">
+        <!-- Copy header from index.html -->
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="cart.html">Cart</a>
+                <span>/</span>
+                <span>Checkout</span>
+            </div>
+
+            <h1 class="section-title">Checkout</h1>
+
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <div class="checkout-step active" id="step-1">
+                        <h2><span>1</span> Contact Information</h2>
+                        <div class="step-content">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="create-account">
+                                <label for="create-account">Create an account for faster checkout</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-step" id="step-2">
+                        <h2><span>2</span> Shipping Address</h2>
+                        <div class="step-content">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apartment">Apartment, Suite, etc. (Optional)</label>
+                                <input type="text" id="apartment">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="DE">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="state">State/Province</label>
+                                    <input type="text" id="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP/Postal Code</label>
+                                    <input type="text" id="zip" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="save-shipping">
+                                <label for="save-shipping">Save this information for next time</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-step" id="step-3">
+                        <h2><span>3</span> Shipping Method</h2>
+                        <div class="step-content">
+                            <div class="shipping-methods">
+                                <div class="shipping-method">
+                                    <input type="radio" name="shipping" id="standard" checked>
+                                    <label for="standard">
+                                        <span class="method-name">Standard Shipping</span>
+                                        <span class="method-desc">3-5 business days</span>
+                                        <span class="method-price">FREE</span>
+                                    </label>
+                                </div>
+                                <div class="shipping-method">
+                                    <input type="radio" name="shipping" id="express">
+                                    <label for="express">
+                                        <span class="method-name">Express Shipping</span>
+                                        <span class="method-desc">2-3 business days</span>
+                                        <span class="method-price">$7.99</span>
+                                    </label>
+                                </div>
+                                <div class="shipping-method">
+                                    <input type="radio" name="shipping" id="carbon-neutral">
+                                    <label for="carbon-neutral">
+                                        <span class="method-name">Carbon Neutral Shipping</span>
+                                        <span class="method-desc">3-5 business days + carbon offset</span>
+                                        <span class="method-price">$2.99</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-step" id="step-4">
+                        <h2><span>4</span> Payment</h2>
+                        <div class="step-content">
+                            <div class="payment-methods">
+                                <div class="payment-tabs">
+                                    <button class="payment-tab active" data-tab="credit-card">Credit Card</button>
+                                    <button class="payment-tab" data-tab="paypal">PayPal</button>
+                                    <button class="payment-tab" data-tab="apple-pay">Apple Pay</button>
+                                </div>
+
+                                <div class="payment-panel active" id="credit-card">
+                                    <div class="form-group">
+                                        <label for="card-number">Card Number</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-name">Name on Card</label>
+                                        <input type="text" id="card-name" placeholder="John Smith">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="card-expiry">Expiration Date</label>
+                                            <input type="text" id="card-expiry" placeholder="MM/YY">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="card-cvv">CVV</label>
+                                            <input type="text" id="card-cvv" placeholder="123">
+                                        </div>
+                                    </div>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox" id="save-card">
+                                        <label for="save-card">Save card for future purchases</label>
+                                    </div>
+                                </div>
+
+                                <div class="payment-panel" id="paypal">
+                                    <div class="paypal-info">
+                                        <p>You'll be redirected to PayPal to complete your purchase securely.</p>
+                                        <img src="images/paypal-logo.png" alt="PayPal">
+                                    </div>
+                                </div>
+
+                                <div class="payment-panel" id="apple-pay">
+                                    <div class="apple-pay-info">
+                                        <p>Complete your purchase with Apple Pay for a fast, secure checkout.</p>
+                                        <button class="apple-pay-btn">
+                                            <i class="fab fa-apple"></i> Pay
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-notes">
+                                <label for="notes">Order Notes (Optional)</label>
+                                <textarea id="notes" placeholder="Add special instructions for your order..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <a href="cart.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Back to Cart</a>
+                        <button class="btn next-btn">Continue to Shipping</button>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-items">
+                        <!-- Order items will be loaded via JavaScript -->
+                    </div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="shipping">FREE</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span class="tax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span class="order-total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="coupon">
+                        <input type="text" placeholder="Enter coupon code">
+                        <button class="btn apply-coupon">Apply</button>
+                    </div>
+
+                    <div class="secure-checkout">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+
+                    <div class="guarantee">
+                        <div class="guarantee-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Sustainable Products</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Carbon Neutral Shipping</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Payment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script src="{%static 'js/checkout.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - EcoTrend</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%} ">
+    <link rel="stylesheet" href="{%static 'css/product-detail.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Header (Same as index.html) -->
+<header class="header">
+    <!-- Copy header from index.html -->
+</header>
+
+<!-- Product Detail Section -->
+<section class="product-detail-section">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="products.html">Shop</a>
+            <span>/</span>
+            <span>Product Detail</span>
+        </div>
+
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/product1-lg.jpg" alt="Bamboo Toothbrush Set" id="main-image">
+                </div>
+                <div class="thumbnail-images">
+                    <div class="thumbnail active" data-image="images/product1-lg.jpg">
+                        <img src="images/product1-sm.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-image="images/product1-alt1-lg.jpg">
+                        <img src="images/product1-alt1-sm.jpg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" data-image="images/product1-alt2-lg.jpg">
+                        <img src="images/product1-alt2-sm.jpg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" data-image="images/product1-alt3-lg.jpg">
+                        <img src="images/product1-alt3-sm.jpg" alt="Thumbnail 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Bamboo Toothbrush Set</h1>
+                <div class="product-meta">
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(42 reviews)</span>
+                    </div>
+                    <div class="sku">SKU: ECO-BT-001</div>
+                    <div class="availability">In Stock</div>
+                </div>
+
+                <div class="price">
+                    <span class="current-price">$12.99</span>
+                    <span class="old-price">$15.99</span>
+                </div>
+
+                <div class="product-description">
+                    <p>Our eco-friendly bamboo toothbrush set includes 4 biodegradable toothbrushes with soft bristles.
+                        Each brush is made from sustainable bamboo and comes with a plant-based bristle option. The
+                        perfect zero-waste alternative to plastic toothbrushes.</p>
+                    <ul>
+                        <li>100% biodegradable bamboo handles</li>
+                        <li>BPA-free bristles (nylon-4 option available)</li>
+                        <li>Soft bristles for gentle cleaning</li>
+                        <li>Natural antibacterial properties</li>
+                        <li>Plastic-free packaging</li>
+                    </ul>
+                </div>
+
+                <div class="product-actions">
+                    <div class="quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1" id="quantity">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                    <button class="btn wishlist"><i class="far fa-heart"></i></button>
+                </div>
+
+                <div class="product-meta-footer">
+                    <div class="category">
+                        <span>Category:</span>
+                        <a href="products.html?category=beauty">Beauty</a>
+                    </div>
+                    <div class="tags">
+                        <span>Tags:</span>
+                        <a href="#">bamboo</a>,
+                        <a href="#">toothbrush</a>,
+                        <a href="#">eco-friendly</a>
+                    </div>
+                </div>
+
+                <div class="share">
+                    <span>Share:</span>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="details">Additional Details</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (42)</button>
+                <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tab-panel active" id="description">
+                    <h3>Product Description</h3>
+                    <p>Our Bamboo Toothbrush Set is the perfect sustainable alternative to plastic toothbrushes. Each
+                        set includes four toothbrushes with soft bristles that provide a gentle yet effective clean
+                        while being kind to your gums.</p>
+                    <p>The handles are made from 100% organic bamboo, a fast-growing, sustainable resource that's
+                        naturally antibacterial. Unlike plastic toothbrushes that sit in landfills for centuries, our
+                        bamboo handles will biodegrade when properly disposed of in a composting environment.</p>
+                    <p>We offer two bristle options: standard nylon bristles (which should be removed before composting
+                        the handle) or our premium plant-based bristles made from castor bean oil (fully
+                        biodegradable).</p>
+                </div>
+
+                <div class="tab-panel" id="details">
+                    <h3>Additional Information</h3>
+                    <table>
+                        <tr>
+                            <th>Material</th>
+                            <td>Bamboo handle, BPA-free bristles</td>
+                        </tr>
+                        <tr>
+                            <th>Dimensions</th>
+                            <td>7.5 x 0.8 x 0.8 inches</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>0.5 oz per toothbrush</td>
+                        </tr>
+                        <tr>
+                            <th>Bristle Firmness</th>
+                            <td>Soft</td>
+                        </tr>
+                        <tr>
+                            <th>Packaging</th>
+                            <td>Recycled paper box, compostable cellulose wrapper</td>
+                        </tr>
+                        <tr>
+                            <th>Sustainability</th>
+                            <td>Carbon neutral production, plastic-free</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tab-panel" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="review-summary">
+                        <div class="average-rating">
+                            <div class="average">4.5</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="total-reviews">Based on 42 reviews</div>
+                        </div>
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <span>5 stars</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 70%;"></div>
+                                </div>
+                                <span>70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>4 stars</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 20%;"></div>
+                                </div>
+                                <span>20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>3 stars</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 5%;"></div>
+                                </div>
+                                <span>5%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>2 stars</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 3%;"></div>
+                                </div>
+                                <span>3%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span>1 star</span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 2%;"></div>
+                                </div>
+                                <span>2%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-form">
+                        <h4>Write a Review</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="review-name">Name</label>
+                                <input type="text" id="review-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-email">Email</label>
+                                <input type="email" id="review-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Rating</label>
+                                <div class="rating-input">
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2"><i class="fas fa-star"></i></label>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1"><i class="fas fa-star"></i></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-title">Review Title</label>
+                                <input type="text" id="review-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-text">Your Review</label>
+                                <textarea id="review-text" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </div>
+
+                    <div class="review-list">
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="review-author">Sarah J.</div>
+                                <div class="review-date">March 15, 2023</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <h5 class="review-title">Best eco toothbrush!</h5>
+                            <div class="review-text">
+                                <p>I've tried several bamboo toothbrushes and these are by far the best. The bristles
+                                    are soft but effective, and the bamboo handle has a nice smooth finish. I love that
+                                    they come in plastic-free packaging too!</p>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <div class="review-header">
+                                <div class="review-author">Michael T.</div>
+                                <div class="review-date">February 28, 2023</div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <h5 class="review-title">Great product with minor issue</h5>
+                            <div class="review-text">
+                                <p>Overall I'm very happy with these toothbrushes. They feel good in the hand and clean
+                                    well. My only complaint is that one of the brushes had a slightly rough edge on the
+                                    handle, but it was easily sanded down.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="shipping">
+                    <h3>Shipping & Returns</h3>
+                    <h4>Shipping Policy</h4>
+                    <p>We offer carbon-neutral shipping on all orders. Most orders are processed within 1-2 business
+                        days and shipped via USPS or UPS. Shipping times vary by location:</p>
+                    <ul>
+                        <li>Standard Shipping: 3-5 business days</li>
+                        <li>Expedited Shipping: 2-3 business days</li>
+                        <li>International Shipping: 7-14 business days</li>
+                    </ul>
+
+                    <h4>Returns Policy</h4>
+                    <p>We want you to be completely satisfied with your purchase. If for any reason you're not happy
+                        with your order, you may return it within 30 days of receipt for a full refund or exchange.</p>
+                    <p>To initiate a return, please contact our customer service team at support@ecotrend.com. All
+                        returned items must be in their original condition with packaging.</p>
+                    <p>Due to the nature of our products, we cannot accept returns on opened personal care items for
+                        hygiene reasons unless the product is defective.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="related-products-grid">
+                <!-- Related products will be loaded via JavaScript -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter (Same as index.html) -->
+<section class="newsletter">
+    <!-- Copy newsletter section from index.html -->
+</section>
+
+<!-- Footer (Same as index.html) -->
+<footer class="footer">
+    <!-- Copy footer from index.html -->
+</footer>
+
+<script src=" {% static ' js/product-detail.js' %}"></script>
+</body>
+</html>

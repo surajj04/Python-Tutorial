@@ -1,0 +1,252 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrend - Sustainable Shopping</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="https://digitinia.com/wp-content/uploads/2022/09/Digitinia-shopify.png" alt="EcoTrend Logo">
+            <span>EcoTrend</span>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/products">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#" id="search-btn"><i class="fas fa-search"></i></a>
+            <a href="#" id="user-btn"><i class="fas fa-user"></i></a>
+            <a href="/cart" id="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+        <div class="search-form">
+            <input type="search" placeholder="Search products...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Sustainable Living Starts Here</h1>
+            <p>Discover eco-friendly products that are good for you and the planet.</p>
+            <a href="products.html" class="btn">Shop Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="feature-box">
+            <i class="fas fa-leaf"></i>
+            <h3>Eco-Friendly</h3>
+            <p>All products meet our strict sustainability standards.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-truck"></i>
+            <h3>Carbon Neutral Shipping</h3>
+            <p>We offset all shipping emissions.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-recycle"></i>
+            <h3>Recyclable Packaging</h3>
+            <p>100% plastic-free and compostable packaging.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Ethically Sourced</h3>
+            <p>Supporting fair trade and ethical labor practices.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories">
+    <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://imgmediagumlet.lbb.in/media/2025/06/684ab5c2e14fa4608b690b4a_1749726658696.jpg"
+                     alt="Home & Living">
+                <div class="category-info">
+                    <h3>Home & Living</h3>
+                    <a href="products.html?category=home" class="btn">View Products</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://world-arabia.com/storage/images/news/crops/social-facebook/jBus86WSl3baFyNQuQlQsq6AjvCZbGbVEKzUilzg.webp"
+                     alt="Fashion">
+                <div class="category-info">
+                    <h3>Fashion</h3>
+                    <a href="products.html?category=fashion" class="btn">View Products</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://plus.unsplash.com/premium_photo-1684407616442-8d5a1b7c978e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     alt="Beauty">
+                <div class="category-info">
+                    <h3>Beauty</h3>
+                    <a href="products.html?category=beauty" class="btn">View Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-products">
+    <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            {% for product in products %}
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="{{product.img}}" alt="Bamboo Toothbrush Set" loading="lazy">
+                    <span class="product-badge new">New</span>
+                </div>
+                <div class="product-info">
+                    <h3><a href="product-detail.html">{{product.name}}</a></h3>
+                    <div class="price">
+                        <span class="current-price">${{ product.dis_price }}</span>
+                        {% if product.dis%}
+                        <span class="old-price line-through text-gray-500">${{ product.price }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(42)</span>
+                    </div>
+                    <button class="btn add-to-cart">Add to Cart</button>
+                    <div class="product-actions">
+                        <button class="quick-view">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="view-all">
+            <a href="products.html" class="btn">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sustainability Impact -->
+<section class="impact">
+    <div class="container">
+        <div class="impact-content">
+            <h2>Our Impact</h2>
+            <p>Every purchase you make helps support sustainable practices and reduces environmental harm.</p>
+            <div class="impact-stats">
+                <div class="stat">
+                    <span class="count" data-target="12500">0</span>
+                    <span>Trees Planted</span>
+                </div>
+                <div class="stat">
+                    <span class="count" data-target="8500">0</span>
+                    <span>Plastic Bottles Saved</span>
+                </div>
+                <div class="stat">
+                    <span class="count" data-target="3200">0</span>
+                    <span>Carbon Tons Offset</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Join Our Green Community</h2>
+            <p>Subscribe to get 10% off your first order and receive tips on sustainable living.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>EcoTrend</h3>
+                <p>Making sustainable shopping accessible and affordable for everyone.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html?category=home">Home & Living</a></li>
+                    <li><a href="products.html?category=fashion">Fashion</a></li>
+                    <li><a href="products.html?category=beauty">Beauty</a></li>
+                    <li><a href="products.html?category=kitchen">Kitchen</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoTrend. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src=" {% static 'js/main.js' %} "></script>
+</body>
+</html>
